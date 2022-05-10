@@ -1,0 +1,48 @@
+.issue{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72) !important;
+   
+}
+
+.form-container
+{
+    background-color: #15172b;
+    display: flex;
+    flex-direction: column;
+    width:  60vw;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 18px;   color:#fff
+}
+.form-container:hover{
+    box-shadow: none;
+}
+.form-items
+{
+    width:70%;
+    border-radius: 10px;
+    border:none;
+    outline:none;
+    padding:10px 30px;
+
+}
+.btn-mine{
+    padding:10px 30px;
+    background-color: #65657b;;
+    color:#fff;
+    border-radius: 15px;
+    margin:1rem;
+    border:none;
+    outline:none;
+
+}
+label{
+    font-weight: bold;
+
+    margin:1rem;
+}

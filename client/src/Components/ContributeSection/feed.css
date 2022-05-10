@@ -1,0 +1,29 @@
+.card{
+
+    
+    border-radius: 5px;
+    width: 80%;
+    
+}
+.card-text-container{
+    width:100%;
+    background:#051937 ;
+    color:blanchedalmond;
+    border-radius: 5px;
+    padding:10px;
+}
+
+.code-section{
+    font-size: 1.8rem;
+    width:90%;
+    border-radius: 15px;
+}
+
+.comment-container{
+    width:100%;
+    background-color: rgb(113, 108, 122);
+    padding:0.5rem;
+    border-radius: 5px;
+    color: ivory;
+    
+}

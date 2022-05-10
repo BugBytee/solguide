@@ -1,0 +1,41 @@
+.contributecontainer{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to right top, #051937, #004d7a, #008793) !important;
+   
+   
+}
+.createPost{
+    width:10%;
+    
+
+}
+.createPost{
+    align-self: flex-start;
+    color:#fff;
+ margin-top: 0.7rem;
+
+}
+.createPost h1{
+   /* height:auto; */
+    
+    font-size: 2.5rem;
+  margin-top: auto;
+  cursor: pointer;
+    border-radius: 100%;
+    margin:10px auto;
+  padding: 4px 15px 10px 15px;  
+    background-color:#051937 ;
+
+    
+}
+.Feed{
+    width:90%;
+}
+
+.card{
+    width:100%;
+    background-color: #fff;
+}
