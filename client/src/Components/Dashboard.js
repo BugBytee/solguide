@@ -28,7 +28,7 @@ const Dashboard = () => {
 
   const Logoutuser = async () => {
     try {
-      await account.deleteSession("[SESSION_ID]");
+      await account.deleteSession("current");
       navigate("/");
     } catch (err) {
       console.log(err.message);
@@ -37,10 +37,8 @@ const Dashboard = () => {
   return (
     <>
       <Navbar/>
-      <h5>{userDetails.name}</h5>
-      <h5>{userDetails.email}</h5>
       {/* <button onClick={() => Logoutuser()}>Logout</button> */}
-      <Card/>
+      <Card name={userDetails.name} email={userDetails.email}/>
     </>
   );
 };

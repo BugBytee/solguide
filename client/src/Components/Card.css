@@ -23,7 +23,7 @@
 .card1
 {
     background-color: #282926 ;
-    border-radius: 10%;
+    border-radius: 10px;
     color:#F9D342 ;
     font-family: 'Roboto', sans-serif;
 }
@@ -39,7 +39,7 @@
 .card2
 {
     background-color: #4A171E;
-    border-radius: 10%;
+    border-radius: 10px;
     color:#df7b02;
     font-family: 'Roboto', sans-serif;
 }
@@ -55,7 +55,7 @@
 .card3
 {
     background-color: #243665;
-    border-radius: 10%;
+    border-radius: 10px;
     color:#8BD8BD;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;

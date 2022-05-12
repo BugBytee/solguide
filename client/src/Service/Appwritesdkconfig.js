@@ -1,6 +1,7 @@
 import { Appwrite } from "appwrite";
-const appwrite = new Appwrite();
+export const appwrite = new Appwrite();
 
-appwrite.setEndpoint("http://localhost/v1").setProject("627a2d6cd1a17e8a7bfd");
-
+appwrite.setEndpoint("http://localhost/v1").setProject("627afc6d8fe392af7216");
+export const db=appwrite.database;
 export const account = appwrite.account;
+export const CollectionID="627b00297fbb5f9ea809";

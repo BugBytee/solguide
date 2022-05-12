@@ -1,0 +1,42 @@
+.form-new{
+    outline: none;
+    border: none;
+    width:60%;
+    background-color: #004d7a;
+    margin:0px 1rem ;
+    padding:0.9rem;
+    border-radius: 15px;color: #fff;
+}
+::placeholder{
+    color: #fff;
+}
+.author{
+    width: 100%;
+}
+.text-right{
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-transform: capitalize;
+}
+.feed-img{
+    padding: 10px;
+    width: 70%;
+   
+}
+@media screen and (max-width: 776px ){
+       .feed-img{
+            width: 100%;
+        }  
+        .Feed{
+
+            border-radius: 5px;
+           margin-left:20%;
+      
+        } 
+       .card{
+           width: 80%!important;
+       }
+
+}

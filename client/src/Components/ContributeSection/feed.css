@@ -2,7 +2,7 @@
 
     
     border-radius: 5px;
-    width: 80%;
+    width: 55%;
     
 }
 .card-text-container{
@@ -20,10 +20,11 @@
 }
 
 .comment-container{
-    width:100%;
+    width: auto;
     background-color: rgb(113, 108, 122);
     padding:0.5rem;
     border-radius: 5px;
     color: ivory;
+    background-color: rgb(15, 100, 90);
     
 }

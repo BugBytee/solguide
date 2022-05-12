@@ -1,7 +1,11 @@
-.body{
-  /* padding: 0px;
-  margin: 0px; */
-  background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12) !important;
+
+
+html{
+  scroll-behavior: smooth;
+}
+body{
+  overflow-x:hidden;
+   background: linear-gradient(to right , #051937, #004d7a, #008793, #00bf72) !important;
 }
 .header
 {
@@ -28,4 +32,18 @@
 {
   color: rgb(33, 8, 57);
   cursor: pointer;
+}
+.brandlogo {
+  font-family: 'VALORANT', sans-serif;
+  font-size: 3rem!important;
+background: #00bf72;
+background: radial-gradient(
+  circle farthest-corner at top center,
+  #00bf72 43%,
+  #94e8e0 100%,
+  #160abf 59%
+);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-weight: bold;
 }

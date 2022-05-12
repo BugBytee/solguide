@@ -3,9 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:100vh;
-    background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72) !important;
-   
+    height:100vh; background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72) !important;
 }
 
 .form-container

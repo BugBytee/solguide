@@ -1,7 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Card.css';
-export const Card = () => {
+export const Card = ({name,email}) => {
   return (
     <div class="container">
       <div class="row">
@@ -10,7 +10,7 @@ export const Card = () => {
             <div class="card-block">
               <h6 class="head-card1 m-b-20">Username</h6>
               <h2 class="text-right">
-                <span className="content">Bishakh Neogi</span>
+                <span className="content">{name}</span>
               </h2>
             </div>
           </div>
@@ -21,7 +21,7 @@ export const Card = () => {
             <div class="card-block">
               <h6 class="head-card2 m-b-20">Email</h6>
               <h2 class="text-right">
-                <span className="content">bneogi102002@gmail.com</span>
+                <span className="content">{email}</span>
               </h2>
             </div>
           </div>
