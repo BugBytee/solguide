@@ -14,4 +14,4 @@ To get a a local copy on your system:
 
 #Prerequisite
 
-1.Docker
+1. Docker
