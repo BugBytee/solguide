@@ -1,6 +1,11 @@
 To get a a local copy on your system:
 
-#Installation & setup
+###Installation & setup
+
+##Prerequisite
+
+1. Set up Docker Environment if u dont.
+
 
 1. Clone the repository
   
@@ -11,7 +16,46 @@ To get a a local copy on your system:
     ```bash
     cd Appwrite
     ```
+3. Install node modules
+    ```
+    npm install
+    ```
+4. Install appwrite sdk using Docker
+    #Unix
+    ```
+    docker run -it --rm \
+    --volume /var/run/docker.sock:/var/run/docker.sock \
+    --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw \
+    --entrypoint="install" \
+    appwrite/appwrite:0.13.4
+     
+    ```
+    #Powershell
+    ```
+      docker run -it --rm ,
+    --volume /var/run/docker.sock:/var/run/docker.sock ,
+    --volume ${pwd}/appwrite:/usr/src/code/appwrite:rw ,
+    --entrypoint="install" ,
+    appwrite/appwrite:0.13.4
+    ```
+    
+    #CMD 
+    ```
+    docker run -it --rm ^
+    --volume //var/run/docker.sock:/var/run/docker.sock ^
+    --volume "%cd%"/appwrite:/usr/src/code/appwrite:rw ^
+    --entrypoint="install" ^
+    appwrite/appwrite:0.13.4
+    ```
+ 5. Install App Dependencies
+     ```
+     cd client
+     ```  
+    
 
-#Prerequisite
 
-1. Docker
+
+
+###Working model
+
+Our web-app lands with a login/ signup page(user can switch between two according to their convenience). After the user has logged in, the dashboard of the user comes up where it shows the username, email and number of contributions of the respective user. It has been implemented using Appwrite SDK. We then have our most interesting part of the web-app which is the 'Contribtion' section where user can answer to the problems asked by an author in real-time. User can also be an author and post their respective doubts or the problem they are facing in the code(user are also allowed to attach their code screenshots).
