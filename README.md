@@ -1,8 +1,8 @@
 To get a a local copy on your system:
 
-###Installation & setup
+### Installation & setup
 
-##Prerequisite
+## Prerequisite
 
 1. Set up Docker Environment if u dont.
 
@@ -21,7 +21,7 @@ To get a a local copy on your system:
     npm install
     ```
 4. Install appwrite sdk using Docker
-    #Unix
+    # Unix
     ```
     docker run -it --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
@@ -30,7 +30,7 @@ To get a a local copy on your system:
     appwrite/appwrite:0.13.4
      
     ```
-    #Powershell
+    # Powershell
     ```
       docker run -it --rm ,
     --volume /var/run/docker.sock:/var/run/docker.sock ,
@@ -39,7 +39,7 @@ To get a a local copy on your system:
     appwrite/appwrite:0.13.4
     ```
     
-    #CMD 
+    # CMD 
     ```
     docker run -it --rm ^
     --volume //var/run/docker.sock:/var/run/docker.sock ^
@@ -47,11 +47,19 @@ To get a a local copy on your system:
     --entrypoint="install" ^
     appwrite/appwrite:0.13.4
     ```
+    
+    then run the Appwrite dashboard in localhost:80 
+    
  5. Install App Dependencies
      ```
      cd client
      ```  
-    
+    ```
+      npm install
+    ```
+    ```
+      npm start
+    ```
 
 
 
