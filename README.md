@@ -5,13 +5,13 @@ To get a a local copy on your system:
 1. Clone the repository
   
     ```bash
-     git clone https://github.com/bishakhne0gi/emotion_detecter.git
+     git clone https://github.com/IRSHIT033/Appwrite.git
      ```
 2. Change the directory
     ```bash
-    cd emotion_detector
+    cd Appwrite
     ```
 
-2. Install the models folder
+#Prerequisite
 
-3. Install face-api.min.js
+1.Docker
