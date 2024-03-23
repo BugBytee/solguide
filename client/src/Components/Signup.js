@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { account } from "../Service/Appwritesdkconfig";
 import { useNavigate } from "react-router-dom";
+import { ID } from "appwrite";
+import { v4 as uuidv4 } from 'uuid';
 
 function Signup() {
   const navigation = useNavigate();
@@ -16,13 +18,13 @@ function Signup() {
     console.log(userDetails);
     try {
       const newuser = await account.create(
-        "unique()",
+        uuidv4(),
         userDetails.email,
         userDetails.password,
         userDetails.name
       );
 
-      await account.createSession(userDetails.email, userDetails.password);
+      await account.createEmailPasswordSession(userDetails.email, userDetails.password);
       console.log(newuser);
       navigation("/dashboard");
     } catch (err) {
@@ -75,11 +77,7 @@ function Signup() {
       >
         Sign up
       </Button>
-      {/* <div className='signup text-center'>
-         <p className='head_signup'>Already have an account?</p>
-         <span className='p-2'></span>
-        <a href=''>Login</a>
-      </div> */}
+
     </Form>
   );
 }

@@ -3,6 +3,7 @@ import { account } from "../Service/Appwritesdkconfig";
 import { useNavigate } from "react-router-dom";
 import Navbar from './Navbar';
 import { Card } from "./Card";
+import { Role } from "appwrite";
 const Dashboard = () => {
   const navigate = useNavigate();
   const [userDetails, setuserDetails] = useState({
@@ -13,7 +14,8 @@ const Dashboard = () => {
     const getuser = async () => {
       try {
         const promise = await account.get();
-
+        Role.users('verified')
+        console.log("promise", promise);
         setuserDetails({
           ...userDetails,
           email: promise.email,
@@ -36,9 +38,9 @@ const Dashboard = () => {
   };
   return (
     <>
-      <Navbar/>
+      <Navbar />
       {/* <button onClick={() => Logoutuser()}>Logout</button> */}
-      <Card name={userDetails.name} email={userDetails.email}/>
+      <Card name={userDetails.name} email={userDetails.email} />
     </>
   );
 };
