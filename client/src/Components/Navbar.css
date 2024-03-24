@@ -1,4 +1,4 @@
-@import url('http://fonts.cdnfonts.com/css/valorant');
+/* @import url('http://fonts.cdnfonts.com/css/valorant'); */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Roboto+Condensed&display=swap');
 .nav-container {
   background: rgba(255, 255, 255, 0.1);
@@ -9,7 +9,7 @@
 
 }
 .nav-brand {
-    font-family: 'VALORANT', sans-serif;
+    /* font-family: 'VALORANT', sans-serif; */
     font-size: 2rem!important;
   background: #00bf72;
   background: radial-gradient(

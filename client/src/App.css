@@ -34,7 +34,7 @@ body{
   cursor: pointer;
 }
 .brandlogo {
-  font-family: 'VALORANT', sans-serif;
+  /* font-family: 'VALORANT', sans-serif; */
   font-size: 3rem!important;
 background: #00bf72;
 background: radial-gradient(
