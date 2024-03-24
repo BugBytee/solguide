@@ -11,9 +11,9 @@ const FeedCard = ({ title, Issue, Desc, Comments, DocumentId, Author, picId }) =
   useEffect(() => {
     const getimageSrc = async () => {
 
-      // const picSrc = await storage.getFilePreview('65ff0ee4685779c7bdb5', picId);
-      // console.log(picSrc);
-      // setImageSrc(picSrc.href);
+      const picSrc = await storage.getFilePreview('65ff0ee4685779c7bdb5', picId);
+      console.log(picSrc);
+      setImageSrc(picSrc.href);
     }
     getimageSrc();
 
@@ -58,9 +58,9 @@ const FeedCard = ({ title, Issue, Desc, Comments, DocumentId, Author, picId }) =
             </div>
           </div>
           <p className='code-section m-2'><strong>Description:</strong> {Desc}</p>
-          {/* <div className="text-center">
+          <div className="text-center">
             <img src={imgsrc} className="feed-img my-3 text-center " />
-          </div> */}
+          </div>
           <p className='text-right'>-- {Author}</p>
 
           <button class='btn-mine' onClick={() => setshowcomments(!showcomments)}>Comment</button>

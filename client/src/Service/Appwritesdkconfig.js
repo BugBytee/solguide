@@ -16,3 +16,4 @@ export const db = new Databases(client, DatabaseID);
 export const account = new Account(client);
 export const storage = new Storage(client);
 export const CollectionID = "65ff1b9eab5723a84dd1";
+export const BucketID = "65ff0ee4685779c7bdb5"
