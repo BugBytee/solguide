@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import "./feedCard.css"
 import FeedCard from './FeedCard'
-import { CollectionID, db, appwrite, storage } from "../../Service/Appwritesdkconfig"
+import { CollectionID, db, storage, DatabaseID } from "../../Service/Appwritesdkconfig"
 
 
 
@@ -12,9 +12,9 @@ const Feed = () => {
 
   useEffect(() => {
     const getallisuses = async () => {
-      const data = await db.listDocuments(CollectionID);
-      const picData = await storage.listFiles('65ff0ee4685779c7bdb5');
-      setAllpic(picData.files.reverse());
+      const data = await db.listDocuments(DatabaseID, CollectionID);
+      // const picData = await storage.listFiles('65ff0ee4685779c7bdb5');
+      // setAllpic(picData.files.reverse());
 
 
       setdataAll(data.documents.reverse());

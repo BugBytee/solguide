@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import "./Issue.css"
-import { db, CollectionID, account, storage } from "../../Service/Appwritesdkconfig.js"
+import { db, CollectionID, account, storage, DatabaseID } from "../../Service/Appwritesdkconfig.js"
 import { useNavigate } from 'react-router-dom'
 import { ID } from 'appwrite'
 const Createissue = () => {
@@ -42,30 +42,30 @@ const Createissue = () => {
 
 
       // const user = await account.getSession('current');
-      const user = await account.getSessions('current');
+      const user = await account.getSession('current');
       console.log(`User: ${JSON.stringify(user)}`);
       if (user) {
-        const res = await db.createDocument(CollectionID, "unique()", IssueDetails);
+        const res = await db.createDocument(DatabaseID, CollectionID, ID.unique(), IssueDetails);
 
         console.log(res);
-        console.log(`Res: ${res}`);
+        console.log(`Res: ${JSON.stringify(res)}`);
         navigate("/contribute")
       } else {
         await account.createAnonymousSession();
-        const res = await db.createDocument(CollectionID, "unique()", IssueDetails);
-        console.log(`Res: ${res}`);
+        // const res = await db.createDocument(CollectionID, "unique()", IssueDetails);
+        const res = await db.createDocument(DatabaseID, CollectionID, ID.unique(), IssueDetails);
+        console.log(`Res: ${JSON.stringify(res)}`);
         navigate("/contribute")
       }
     } catch (err) {
-      console.log(db);
-      console.log(err.message);
+      console.log(err);
     }
   }
 
-  const sendPictostorage = async () => {
-    let promise = await storage.createFile('65ff0ee4685779c7bdb5', ID.unique, document.getElementById('uploader').files[0]);
+  // const sendPictostorage = async () => {
+  //   let promise = await storage.createFile('65ff0ee4685779c7bdb5', ID.unique, document.getElementById('uploader').files[0]);
 
-  }
+  // }
 
   return (
     <div className="issue">
@@ -87,7 +87,7 @@ const Createissue = () => {
           ...IssueDetails,
           Desc: e.target.value
         })} className="form-items" placeholder="write your issue" />
-        <input type="file" onChange={(e) => sendPictostorage(e)} id="uploader" className="form-items" placeholder="add file" />
+        {/* <input type="file" onChange={(e) => sendPictostorage(e)} id="uploader" className="form-items" placeholder="add file" /> */}
         <button className=" btn-mine" onClick={(e) => addnewissue(e)}>Create</button>
       </form>
     </div>
