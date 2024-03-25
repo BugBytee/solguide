@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: DmSans-Regular;
+  src: url(../../public/fonts/DMSans-Regular.ttf);
+}
+@font-face {
+  font-family: DmSans-Medium;
+  src: url(../../public/fonts/DMSans-Medium.ttf);
+}
+@font-face {
+  font-family: DmSans-Bold;
+  src: url(../../public/fonts/DMSans-Bold.ttf);
+}
+::-webkit-scrollbar {
+  display: none;
+}
