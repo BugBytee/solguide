@@ -7,6 +7,7 @@ import { Images } from '../../public/assets'
 import { usePathname } from 'next/navigation'
 import Marquee from 'react-fast-marquee'
 import { Header } from '.'
+import Link from 'next/link'
 const Navbar = () => {
 
 
@@ -36,20 +37,20 @@ const Navbar = () => {
 
 
                 </div>
-                <div className='links flex items-center justify-center font-dmSans-medium bg-yellow-light text-[40px] sm:text-[56px] basis-[30%]  sm:border-l-4 '>
-                    {
-                        pathname === '/' ? (
-                            <>
+                {
+                    pathname === '/' ? (
+                        <>
+                            <Link href='/creation' className='links flex items-center justify-center font-dmSans-medium bg-yellow-light hover:bg-yellow-deep  text-[40px] sm:text-[56px] basis-[30%]  sm:border-l-4 cursor-pointer'>
                                 Login
-                            </>
-                        ) :
-                            (
-                                <>
-                                    Home
-                                </>
-                            )
-                    }
-                </div>
+                            </Link>
+                        </>
+                    ) :
+                        (
+                            <Link href='/' className='links flex items-center justify-center font-dmSans-medium bg-yellow-light hover:bg-yellow-deep  text-[40px] sm:text-[56px] basis-[30%]  sm:border-l-4 cursor-pointer'>
+                                Home
+                            </Link>
+                        )
+                }
             </div>
 
         </>
