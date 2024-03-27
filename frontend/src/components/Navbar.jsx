@@ -19,16 +19,15 @@ const Navbar = () => {
             <Header />
             <div className='navbar_container flex border-b-4 border-b-black flex-col sm:flex-row'>
                 <div className='marquee basis-[70%] flex items-center justify-center overflow-x-hidden border-b-4 sm:border-none'>
-
-
-
                     <Marquee>
                         {
                             marquee.map((item, index) => (
                                 <>
+                                    <div className='flex flex-row'>
 
-                                    <span key={index} className="mx-4 text-[40px] font-dmSans-medium">{item.items}</span>
-                                    <Image src={Images.marquee} className='mx-4' height={40} width={40} />
+                                        <span key={index} className="mx-4 text-[40px] font-dmSans-medium">{item.items}</span>
+                                        <Image src={Images.marquee} className='mx-4' height={40} width={40} />
+                                    </div>
                                 </>
                             ))
                         }
@@ -36,9 +35,8 @@ const Navbar = () => {
 
 
 
-
                 </div>
-                <div className='links flex items-center justify-center font-dmSans-bold bg-yellow-light text-[56px] basis-[30%] border-l-4 border-b-black'>
+                <div className='links flex items-center justify-center font-dmSans-medium bg-yellow-light text-[40px] sm:text-[56px] basis-[30%]  sm:border-l-4 '>
                     {
                         pathname === '/' ? (
                             <>
