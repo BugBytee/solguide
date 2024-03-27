@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { Images } from '../../../public/assets'
+import { account } from '@/appwrite/appwritesdkconfig'
+import { v4 as uuidv4 } from 'uuid';
 
 const Creation = () => {
 
@@ -10,6 +12,55 @@ const Creation = () => {
     const toggleComponent = () => {
         setIsRegister(!isRegister);
     }
+
+
+
+    const [userDetails, setUserdetails] = useState({
+        name: "",
+        email: "",
+        password: "",
+    });
+
+    const signupuser = async (e) => {
+        e.preventDefault();
+        console.log(userDetails);
+        try {
+            const newuser = await account.create(
+                uuidv4(),
+                userDetails.email,
+                userDetails.password,
+                userDetails.name
+            );
+
+            await account.createEmailPasswordSession(userDetails.email, userDetails.password);
+            setUserdetails({
+                name: "",
+                email: "",
+                password: "",
+
+            })
+            console.log(newuser);
+
+        } catch (err) {
+            console.log(err.message);
+        }
+    };
+
+    const loginuser = async (e) => {
+        e.preventDefault();
+        console.log(userDetails);
+        try {
+            await account.createEmailPasswordSession(userDetails.email, userDetails.password);
+
+        } catch (err) {
+            console.log(err.message);
+        }
+        setUserdetails({
+            email: "",
+            password: "",
+
+        })
+    };
 
 
     return (
@@ -40,16 +91,46 @@ const Creation = () => {
                                 <>
                                     <div className="bg-white h-[340px] flex flex-col justify-center items-center rounded-[16px] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] py-10 px-16 gap-4">
                                         <input className="bg-white w-full flex items-center justify-center rounded-[16px] border-2 border-black p-[10px] font-dmSans-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] outline-none transition-all focus:translate-x-[3px] focus:translate-y-[3px] focus:shadow-none"
+
+                                            type="text"
+                                            onChange={(e) => {
+                                                setUserdetails({
+                                                    ...userDetails,
+                                                    name: e.target.value,
+                                                });
+                                            }}
+                                            value={userDetails.name}
                                             placeholder='Username'
                                         />
                                         <input className="bg-white w-full flex rounded-[16px] border-2 border-black p-[10px] font-dmSans-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] outline-none transition-all focus:translate-x-[3px] focus:translate-y-[3px] focus:shadow-none"
                                             placeholder='Email'
+                                            type="email"
+                                            onChange={(e) => {
+                                                setUserdetails({
+                                                    ...userDetails,
+                                                    email: e.target.value,
+                                                });
+                                            }}
+                                            value={userDetails.email}
                                         />
                                         <input className="bg-white w-full flex rounded-[16px] border-2 border-black p-[10px] font-dmSans-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] outline-none transition-all focus:translate-x-[3px] focus:translate-y-[3px] focus:shadow-none"
+
+                                            type="password"
+                                            onChange={(e) => {
+                                                setUserdetails({
+                                                    ...userDetails,
+                                                    password: e.target.value,
+                                                });
+                                            }}
+                                            value={userDetails.password}
                                             placeholder='Password'
                                         />
 
                                         <button className="flex cursor-pointer items-center rounded-[16px] border-2 border-black bg-orange  px-10 py-3 font-dmSans-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+
+                                            onClick={(e) => {
+                                                signupuser(e);
+                                            }}
                                         >
                                             Register
                                         </button>
@@ -62,13 +143,32 @@ const Creation = () => {
                                         <div className="bg-white h-[340px] flex flex-col justify-center items-center rounded-[16px] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] py-10 px-16 gap-4">
 
                                             <input className="bg-white w-full flex rounded-[16px] border-2 border-black p-[10px] font-dmSans-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] outline-none transition-all focus:translate-x-[3px] focus:translate-y-[3px] focus:shadow-none"
+                                                type="email"
                                                 placeholder='Email'
+                                                onChange={(e) => {
+                                                    setUserdetails({
+                                                        ...userDetails,
+                                                        email: e.target.value,
+                                                    });
+                                                }}
+                                                value={userDetails.email}
                                             />
                                             <input className="bg-white w-full flex rounded-[16px] border-2 border-black p-[10px] font-dmSans-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] outline-none transition-all focus:translate-x-[3px] focus:translate-y-[3px] focus:shadow-none"
+                                                type="password"
+                                                onChange={(e) => {
+                                                    setUserdetails({
+                                                        ...userDetails,
+                                                        password: e.target.value,
+                                                    });
+                                                }}
+                                                value={userDetails.password}
                                                 placeholder='Password'
                                             />
 
                                             <button className="flex cursor-pointer items-center rounded-[16px] border-2 border-black bg-orange  px-10 py-3 font-dmSans-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+                                                onClick={(e) => {
+                                                    loginuser(e);
+                                                }}
                                             >
                                                 Login
                                             </button>

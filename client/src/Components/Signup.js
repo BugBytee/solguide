@@ -25,8 +25,7 @@ function Signup() {
       );
 
       await account.createEmailPasswordSession(userDetails.email, userDetails.password);
-      console.log(newuser);
-      navigation("/dashboard");
+      // console.log(newuser);
     } catch (err) {
       console.log(err.message);
     }
