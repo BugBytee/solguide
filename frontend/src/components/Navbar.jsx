@@ -39,7 +39,7 @@ const Navbar = () => {
                 </div>
                 <div className='links flex items-center justify-center font-dmSans-bold bg-yellow-light text-[56px] basis-[30%] border-l-4 border-b-black'>
                     {
-                        pathname ? (
+                        pathname === '/' ? (
                             <>
                                 Login
                             </>
